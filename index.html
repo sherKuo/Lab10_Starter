@@ -15,6 +15,15 @@
   <link rel="stylesheet" href="assets/styles/global.css" />
   <script src="assets/scripts/partyHorn.js" type="module"></script>
   <script src="https://unpkg.com/launchdarkly-js-client-sdk@2"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-604YPMJM4W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-604YPMJM4W');
+  </script>
 </head>
 
 <body>
@@ -45,25 +54,25 @@
   </main>
   <script>
     var user = {
-      firstName: 'Bob',
-      lastName: 'Loblaw',
+      //firstName: 'Bob',
+      //lastName: 'Loblaw',
       key: 'UNIQUE IDENTIFIER',
-      custom: {
-        groups: 'beta_testers'
-      }
+      //custom: {
+      //  groups: 'beta_testers'
+      //}
     };
   
-    var div = document.createElement('div');
-    document.body.appendChild(div);
+    //var div = document.createElement('div');
+    //document.body.appendChild(div);
   
-    div.appendChild(document.createTextNode('Initializing...'));
+    //div.appendChild(document.createTextNode('Initializing...'));
   
     var ldclient = LDClient.initialize('61a480e4aed9da0fa6fc09ed', user);
   
     function render() {
       var shouldShow = ldclient.variation('blue-background', false);
-      var label = (shouldShow ? 'Showing' : 'Not showing') + ' your feature to ' + user.key;
-      div.replaceChild(document.createTextNode(label), div.firstChild);
+      //var label = (shouldShow ? 'Showing' : 'Not showing') + ' your feature to ' + user.key;
+      //div.replaceChild(document.createTextNode(label), div.firstChild);
     }
   
     ldclient.on('ready', render);
