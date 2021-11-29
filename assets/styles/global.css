@@ -8,6 +8,7 @@ body {
   align-items: center;
   display: grid;
   justify-items: center;
+  color:blue;
 }
 
 body.blue {
